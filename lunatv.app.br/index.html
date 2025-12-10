@@ -136,64 +136,58 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 @font-face{font-family:Manrope;font-style:normal;font-weight:200 800;font-display:fallback;src:url('wp-content/themes/twentytwentyfive/assets/fonts/manrope/Manrope-VariableFont_wght.woff2') format('woff2');}
 @font-face{font-family:"Fira Code";font-style:normal;font-weight:300 700;font-display:fallback;src:url('wp-content/themes/twentytwentyfive/assets/fonts/fira-code/FiraCode-VariableFont_wght.woff2') format('woff2');}
 </style>
-	
+	/* Estilos para o container de notificação */
 <style>
-/* Estilos para o container de notificação */
-<style>
-	
-/* Estilos Padrão para o container de notificação (Desktop) */
 #notification-container {
-    position: fixed;
-    bottom: 20px;
-    left: 20px; 
-    background-color: #38a169;
+    position: fixed;              /* FIXA NA TELA */
+    bottom: 20px;                 /* NA PARTE DE BAIXO */
+    left: 20px;                   /* CANTO ESQUERDO */
+    background-color: #38a169;    /* verde */
     color: white;
     padding: 10px 15px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: none;                /* JS controla */
     flex-direction: column;
-    z-index: 100001;
-    max-width: 300px; /* Limite de largura para desktop */
+    z-index: 999999;              /* bem acima de tudo */
+    max-width: 300px;
     font-family: Arial, sans-serif;
-    animation: fadeInOut 8s ease-in-out; 
+    animation: fadeInOut 8s ease-in-out;
 }
 
+/* Ajuste do título */
 #notification-header {
     font-weight: bold;
     margin-bottom: 5px;
     font-size: 0.9em;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
     padding-bottom: 3px;
 }
 
+/* Texto */
 #notification-body {
     font-size: 0.8em;
 }
 
-/* MEDIA QUERY: Otimização para Mobile (Telas com até 480px) */
-@media (max-width: 480px) {
+/* Mobile */
+@media (max-width: 480px){
     #notification-container {
-        left: 10px;
-        right: 10px; /* Ocupa a largura total da tela, com margem de 10px */
-        max-width: none; /* Remove a largura máxima fixa */
-        padding: 8px 12px;
-    }
-    #notification-header {
-        font-size: 0.8em; /* Fonte um pouco menor */
-    }
-    #notification-body {
-        font-size: 0.7em; /* Fonte um pouco menor */
+        max-width: 90%;
+        left: 5%;
+        right: 5%;
+        bottom: 15px;
+        font-size: 14px;
     }
 }
 
-/* Animação simples */
+/* Animação */
 @keyframes fadeInOut {
-    0% { opacity: 0; transform: translateX(-50px); }
-    10% { opacity: 1; transform: translateX(0); }
-    90% { opacity: 1; transform: translateX(0); }
-    100% { opacity: 0; transform: translateX(-50px); }
+    0%   { opacity: 0; transform: translateY(20px); }
+    10%  { opacity: 1; transform: translateY(0); }
+    90%  { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(20px); }
 }
+
 </style>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /></head>
