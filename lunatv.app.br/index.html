@@ -27,7 +27,7 @@
 			<title>Televizo &#8211; Aqui na Televizo voc&ecirc; consegui assistir Tudo! todos os canais liberados para voc&ecirc; curtir e relaxar, com jogo do seu tim&atilde;o favorito, s&eacute;ries e filmes.</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name='robots' content='max-image-preview:large' />
-<title>Luna Tv &#8211; Aqui naTelevizo voc&ecirc; consegui assistir Tudo! todos os canais liberados para voc&ecirc; curtir e relaxar, com jogo do seu tim&atilde;o favorito, s&eacute;ries e filmes.</title>
+<title>Televizo &#8211; Aqui naTelevizo voc&ecirc; consegui assistir Tudo! todos os canais liberados para voc&ecirc; curtir e relaxar, com jogo do seu tim&atilde;o favorito, s&eacute;ries e filmes.</title>
 <link rel="alternate" type="application/rss+xml" title="Luna Tv &raquo; Feed" href="feed/index.html" />
 <link rel="alternate" type="application/rss+xml" title="Luna Tv &raquo; Feed de comentários" href="comments/feed/index.html" />
 <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="wp-json/oembed/1.0/embedc99a.json?url=https%3A%2F%2Flunatv.app.br%2F" />
@@ -136,8 +136,57 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 @font-face{font-family:Manrope;font-style:normal;font-weight:200 800;font-display:fallback;src:url('wp-content/themes/twentytwentyfive/assets/fonts/manrope/Manrope-VariableFont_wght.woff2') format('woff2');}
 @font-face{font-family:"Fira Code";font-style:normal;font-weight:300 700;font-display:fallback;src:url('wp-content/themes/twentytwentyfive/assets/fonts/fira-code/FiraCode-VariableFont_wght.woff2') format('woff2');}
 </style>
+
+<style>
+/* Estilos para o container de notificação */
+#notification-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #38a169;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    z-index: 100001;
+    max-width: 300px;
+    font-family: Arial, sans-serif;
+    animation: fadeInOut 8s ease-in-out;
+}
+
+#notification-header {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 3px;
+}
+
+#notification-body {
+    font-size: 0.8em;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateX(-50px); }
+    10% { opacity: 1; transform: translateX(0); }
+    90% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(-50px); }
+}
+</style>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /></head>
 <body class="home wp-singular page-template page-template-elementor_canvas page page-id-377 wp-embed-responsive wp-theme-twentytwentyfive elementor-default elementor-template-canvas elementor-kit-6 elementor-page elementor-page-377">
+
+<div id="notification-container">
+    <div id="notification-header">Compra Realizada</div>
+    <div id="notification-body"></div>
+</div>
+
+
+<div data-elementor-type="wp-page" data-elementor-id="377" class="elementor elementor-377" data-elementor-post-type="page">
+
 			<div data-elementor-type="wp-page" data-elementor-id="377" class="elementor elementor-377" data-elementor-post-type="page">
 						<section class="elementor-section elementor-top-section elementor-element elementor-element-40d1ad9 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="40d1ad9" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 						<div class="elementor-container elementor-column-gap-default">
@@ -1196,6 +1245,75 @@ function scrollToPlans(){
   }, 10);
 }
 </script>
+<script>
+var notifications = [
+    { name: "Maria Souza", minutes: 10 },
+    { name: "Ana Santos", minutes: 15 },
+    { name: "Carolina Silva", minutes: 22 },
+    { name: "Juliana Oliveira", minutes: 7 },
+    { name: "Larissa Costa", minutes: 11 },
+    { name: "Fernanda Almeida", minutes: 18 },
+    { name: "Camila Rodrigues", minutes: 25 },
+    { name: "Beatriz Gomes", minutes: 9 },
+    { name: "Letícia Pereira", minutes: 14 },
+    { name: "Rafaela Martins", minutes: 20 },
+    { name: "Isabela Fernandes", minutes: 13 },
+    { name: "Gabriela Barbosa", minutes: 16 },
+    { name: "Mariana Santos", minutes: 24 },
+    { name: "Bruna Lima", minutes: 8 },
+    { name: "Natália Castro", minutes: 19 },
+    { name: "Vitória Ribeiro", minutes: 12 },
+    { name: "Amanda Sousa", minutes: 17 },
+    { name: "Raquel Fernandes", minutes: 23 },
+    { name: "Thaís Costa", minutes: 6 },
+    { name: "Giovanna Alves", minutes: 21 },
+    { name: "João Souza", minutes: 10 },
+    { name: "Pedro Santos", minutes: 15 },
+	{ name: "Alan Neto", minutes: 15 },
+	{ name: "Amorin Pereira", minutes: 15 },
+	{ name: "Santos Barros", minutes: 15 },
+	{ name: "Alexandre de Moraes", minutes: 15 },
+	{ name: "Neto Lima", minutes: 15 },
+	{ name: "Pinho Marinho", minutes: 15 },
+	{ name: "Yara Eloá", minutes: 15 },
+	{ name: "Luíza Marques", minutes: 15 },
+    { name: "Lucas Silva", minutes: 22 },
+    { name: "Rafael Oliveira", minutes: 7 },
+    { name: "Gustavo Costa", minutes: 11 }
+];
+
+var currentNotificationIndex = 0;
+var notificationContainer = document.getElementById("notification-container");
+var notificationHeader = document.getElementById("notification-header");
+var notificationBody = document.getElementById("notification-body");
+
+function showNextNotification() {
+    var currentNotification = notifications[currentNotificationIndex];
+
+    notificationHeader.textContent = "Compra Realizada";
+    notificationBody.textContent = currentNotification.name + " comprou o produto há " + currentNotification.minutes + " minutos.";
+
+    // Reinicia a animação
+    notificationContainer.style.animation = 'none';
+    notificationContainer.offsetHeight; // Reflow
+    notificationContainer.style.animation = null;
+
+    notificationContainer.style.display = "flex";
+
+    setTimeout(function() {
+        notificationContainer.style.display = "none";
+        currentNotificationIndex++;
+        if (currentNotificationIndex >= notifications.length) {
+            currentNotificationIndex = 0;
+        }
+    }, 5000); // Exibe por 5 segundos
+}
+
+setInterval(showNextNotification, 8000); // Exibe nova a cada 8 segundos
+showNextNotification(); // Mostra a primeira imediatamente
+</script>
+
+	
 
 </body>
 </html>
