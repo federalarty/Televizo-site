@@ -172,11 +172,21 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /* Mobile */
 @media (max-width: 480px){
     #notification-container {
-        max-width: 90%;
-        left: 5%;
-        right: 5%;
-        bottom: 15px;
-        font-size: 14px;
+        max-width: 85%;
+        left: 7%;
+        right: 7%;
+        bottom: 12px;
+        padding: 6px 10px;      /* menos espaço interno */
+        font-size: 12px;        /* base menor */
+        border-radius: 6px;
+    }
+
+    #notification-header {
+        font-size: 0.8em;       /* título menor no mobile */
+    }
+
+    #notification-body {
+        font-size: 0.7em;       /* texto menor no mobile */
     }
 }
 
