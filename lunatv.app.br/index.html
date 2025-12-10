@@ -141,23 +141,24 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /* Estilos para o container de notificação */
 #notification-container{
     position: fixed;
-    left: 12px;
+    left: 10px;
     bottom: 20px;
-    max-width: 280px;          /* DIMINUI O TAMANHO NO MOBILE */
-    background: #2ba84a;
+    max-width: 360px;
+    background: #c462a7;          /* roxinho */
     color: #fff;
-    padding: 10px 14px;
-    border-radius: 10px;
+    padding: 10px 16px;
+    border-radius: 8px;
     font-size: 13px;
-    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+    box-shadow: 0 4px 12px rgba(0,0,0,.3);
     display: flex;
-    flex-direction: column;
-    gap: 4px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
     z-index: 9999;
     opacity: 0;
     transform: translateY(10px);
     pointer-events: none;
-    transition: opacity .35s ease, transform .35s ease;
+    transition: opacity .3s ease, transform .3s ease;
 }
 
 #notification-container.is-visible{
@@ -165,29 +166,13 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     transform: translateY(0);
 }
 
-/* "Compra Realizada" estilo badge */
 #notification-container .badge{
-    background: #1c772e;
-    padding: 3px 10px;
-    border-radius: 20px;
+    background: #28a745;          /* verdinho do "Compra Realizada" */
+    padding: 3px 8px;
+    border-radius: 999px;
     font-weight: bold;
     font-size: 12px;
 }
-
-/* Ajuste específico só para celulares */
-@media (max-width: 480px){
-    #notification-container{
-        max-width: 240px;     /* ainda menor para telas pequenas */
-        padding: 8px 12px;
-        font-size: 12px;
-    }
-
-    #notification-container .badge{
-        font-size: 11px;
-        padding: 3px 8px;
-    }
-}
-
 </style>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /></head>
