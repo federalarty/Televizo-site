@@ -139,39 +139,60 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 	
 <style>
 /* Estilos para o container de notificação */
-#notification-container{
+<style>
+	
+/* Estilos Padrão para o container de notificação (Desktop) */
+#notification-container {
     position: fixed;
-    left: 10px;
     bottom: 20px;
-    max-width: 360px;
-    background: #c462a7;          /* roxinho */
-    color: #fff;
-    padding: 10px 16px;
+    left: 20px; 
+    background-color: #38a169;
+    color: white;
+    padding: 10px 15px;
     border-radius: 8px;
-    font-size: 13px;
-    box-shadow: 0 4px 12px rgba(0,0,0,.3);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 6px;
-    z-index: 9999;
-    opacity: 0;
-    transform: translateY(10px);
-    pointer-events: none;
-    transition: opacity .3s ease, transform .3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    z-index: 100001;
+    max-width: 300px; /* Limite de largura para desktop */
+    font-family: Arial, sans-serif;
+    animation: fadeInOut 8s ease-in-out; 
 }
 
-#notification-container.is-visible{
-    opacity: 1;
-    transform: translateY(0);
-}
-
-#notification-container .badge{
-    background: #28a745;          /* verdinho do "Compra Realizada" */
-    padding: 3px 8px;
-    border-radius: 999px;
+#notification-header {
     font-weight: bold;
-    font-size: 12px;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 3px;
+}
+
+#notification-body {
+    font-size: 0.8em;
+}
+
+/* MEDIA QUERY: Otimização para Mobile (Telas com até 480px) */
+@media (max-width: 480px) {
+    #notification-container {
+        left: 10px;
+        right: 10px; /* Ocupa a largura total da tela, com margem de 10px */
+        max-width: none; /* Remove a largura máxima fixa */
+        padding: 8px 12px;
+    }
+    #notification-header {
+        font-size: 0.8em; /* Fonte um pouco menor */
+    }
+    #notification-body {
+        font-size: 0.7em; /* Fonte um pouco menor */
+    }
+}
+
+/* Animação simples */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateX(-50px); }
+    10% { opacity: 1; transform: translateX(0); }
+    90% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(-50px); }
 }
 </style>
 
